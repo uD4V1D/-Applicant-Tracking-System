@@ -2,6 +2,20 @@
 
 API REST para um fluxo de recrutamento e seleção (ATS), construída com Django, Django REST Framework e documentação OpenAPI via drf-spectacular.
 
+## Requisitos
+
+- Python 3.12+
+
+## Instalação e execução
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+pip install -r requirements.txt
+task migrate
+task run
+```
+
 ## Funcionalidades implementadas
 
 - Cadastro e autenticação de usuários (empresa e candidato)
@@ -36,16 +50,3 @@ Quando o candidato atinge **2/2 pontos**, ele recebe a tag **Hyped** (roxa), ind
 - `vagas`: gestão de vagas
 - `candidaturas`: gestão de candidaturas
 - `api`: configurações e rotas globais
-
-## Requisitos
-
-- Python 3.12+
-
-## Instalação
-
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-task migrate
-task run

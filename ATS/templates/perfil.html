@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Meu perfil | ATS{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <h2>Meu Perfil</h2>
+    <div id="perfil-grid" class="grid perfil-grid">
+        <div>
+            <h3>Dados de acesso</h3>
+            <div class="field">
+                <label for="profile-email">E-mail</label>
+                <input id="profile-email" type="email">
+            </div>
+            <div class="field">
+                <label for="profile-password">Nova senha (opcional)</label>
+                <input id="profile-password" type="password" placeholder="Deixe vazio para manter a senha atual">
+            </div>
+
+            <div id="candidate-user-fields">
+                <h3>Perfil do usuário</h3>
+                <div class="field">
+                    <label for="profile-nome-completo">Nome completo</label>
+                    <input id="profile-nome-completo" type="text">
+                </div>
+                <div class="field">
+                    <label for="profile-data-nascimento">Data de nascimento</label>
+                    <input id="profile-data-nascimento" type="date">
+                </div>
+            </div>
+
+            <div id="company-user-fields" class="hidden">
+                <h3>Perfil da empresa</h3>
+                <div class="field">
+                    <label for="profile-nome-empresa">Nome da empresa</label>
+                    <input id="profile-nome-empresa" type="text">
+                </div>
+                <div class="field">
+                    <label for="profile-cnpj">CNPJ</label>
+                    <input id="profile-cnpj" type="text">
+                </div>
+            </div>
+
+            <div id="candidate-professional-fields">
+                <h3>Perfil profissional</h3>
+                <div class="field">
+                    <label for="perfil-salario">Pretensão salarial</label>
+                    <input id="perfil-salario" type="number">
+                </div>
+                <div class="field">
+                    <label for="perfil-escolaridade">Escolaridade</label>
+                    <select id="perfil-escolaridade">
+                        <option value="fundamental">Ensino fundamental</option>
+                        <option value="medio">Ensino médio</option>
+                        <option value="tecnologo">Tecnólogo</option>
+                        <option value="superior">Ensino Superior</option>
+                        <option value="pos">Pós / MBA / Mestrado</option>
+                        <option value="doutorado">Doutorado</option>
+                    </select>
+                </div>
+                <label class="muted-label">Experiências profissionais</label>
+                <div id="experiencias-container" class="list"></div>
+                <div class="actions">
+                    <button class="btn btn-secondary" id="btn-add-experiencia" type="button">Adicionar experiência</button>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn" id="btn-salvar-perfil" type="button">Salvar</button>
+                <button class="btn btn-secondary" id="btn-carregar-perfil" type="button">Carregar</button>
+            </div>
+        </div>
+        <div id="perfil-candidaturas-panel">
+            <h3>Minhas candidaturas</h3>
+            <button class="btn btn-secondary" id="btn-minhas-candidaturas" type="button">Atualizar lista</button>
+            <div class="list" id="minhas-candidaturas-list"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_js %}
+<script type="module" src="{% static 'js/perfil.js' %}"></script>
+{% endblock %}

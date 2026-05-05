@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Relatórios | ATS{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/relatorios.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <h2>Tela para relatório</h2>
+    <div class="actions report-actions">
+        <a class="btn btn-secondary" href="{% url 'ui-empresa' %}">Voltar para minhas vagas</a>
+    </div>
+    <div class="report-grid">
+        <div class="report-card">
+            <h4>Vagas criadas por mês</h4>
+            <canvas id="chart-vagas-mes"></canvas>
+        </div>
+        <div class="report-card">
+            <h4>Candidatos recebidos por mês</h4>
+            <canvas id="chart-candidatos-mes"></canvas>
+        </div>
+        <div class="report-card">
+            <h4>Quantidade de candidaturas por vaga</h4>
+            <canvas id="chart-candidaturas-vaga"></canvas>
+        </div>
+        <div class="report-card">
+            <h4>Vagas abertas, encerradas e preenchidas por mês</h4>
+            <canvas id="chart-status-mes"></canvas>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="{% static 'js/relatorios.js' %}"></script>
+{% endblock %}

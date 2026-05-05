@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ATS Portal{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block page_css %}{% endblock %}
+</head>
+<body>
+    {% include 'includes/header.html' %}
+    <main class="container">
+        <div id="feedback" class="msg hidden"></div>
+        {% block content %}{% endblock %}
+    </main>
+    {% include 'includes/modals.html' %}
+    {% block page_js %}{% endblock %}
+</body>
+</html>

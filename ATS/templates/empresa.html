@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Minhas vagas | ATS{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/empresa.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <h2 class="empresa-title">Gerenciamento de posições</h2>
+    <div class="status-summary-row">
+        <div class="status-summary-card aberta">
+            <span class="label">Vagas abertas</span>
+            <span class="value" id="summary-abertas">0</span>
+        </div>
+        <div class="status-summary-card encerrada">
+            <span class="label">Vagas encerradas</span>
+            <span class="value" id="summary-encerradas">0</span>
+        </div>
+        <div class="status-summary-card preenchida">
+            <span class="label">Vagas preenchidas</span>
+            <span class="value" id="summary-preenchidas">0</span>
+        </div>
+    </div>
+
+    <div class="empresa-toolbar">
+        <button class="btn" id="btn-toggle-nova-vaga" type="button">Nova vaga</button>
+        <button class="btn btn-secondary" id="btn-abrir-relatorios" type="button">Tela para relatório</button>
+    </div>
+
+    <div id="empresa-nova-vaga-box" class="hidden">
+        <h3>Nova vaga</h3>
+        <div class="field">
+            <label for="vaga-nome">Título</label>
+            <input id="vaga-nome" type="text">
+        </div>
+        <div class="field">
+            <label for="vaga-faixa">Faixa salarial</label>
+            <select id="vaga-faixa">
+                <option value="1">Até 1000</option>
+                <option value="2">1000-2000</option>
+                <option value="3">2000-3000</option>
+                <option value="4">Acima de 3000</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="vaga-escolaridade">Escolaridade mínima</label>
+            <select id="vaga-escolaridade">
+                <option value="fundamental">Fundamental</option>
+                <option value="medio">Médio</option>
+                <option value="tecnologo">Tecnólogo</option>
+                <option value="superior">Superior</option>
+                <option value="pos">Pós/MBA/Mestrado</option>
+                <option value="doutorado">Doutorado</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="vaga-requisitos">Descrição/Requisitos</label>
+            <textarea id="vaga-requisitos"></textarea>
+        </div>
+        <div class="actions">
+            <button class="btn" id="btn-criar-vaga" type="button">Criar vaga</button>
+            <button class="btn btn-secondary" id="btn-cancelar-nova-vaga" type="button">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="empresa-filtros">
+        <div class="field">
+            <label for="empresa-filtro-status">Status</label>
+            <select id="empresa-filtro-status">
+                <option value="">Todos</option>
+                <option value="aberta">Aberta</option>
+                <option value="encerrada">Encerrada</option>
+                <option value="preenchida">Preenchida</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="empresa-filtro-titulo">Título da vaga</label>
+            <input id="empresa-filtro-titulo" list="empresa-titulo-options" type="text" placeholder="Pesquise por palavra-chave">
+            <datalist id="empresa-titulo-options"></datalist>
+        </div>
+    </div>
+
+    <div class="list" id="minhas-vagas-list"></div>
+</section>
+{% endblock %}
+
+{% block page_js %}
+<script type="module" src="{% static 'js/empresa.js' %}"></script>
+{% endblock %}

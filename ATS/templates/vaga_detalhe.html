@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Detalhes da vaga | ATS{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/vaga_detalhe.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <h2>Detalhes da Vaga</h2>
+    <div id="vaga-detalhes"></div>
+    <div class="actions">
+        <button class="btn hidden" id="btn-candidatar" type="button">Candidatar-se</button>
+        <a class="btn btn-secondary" href="{% url 'ui-portal' %}">Voltar ao portal</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_js %}
+<script type="module" src="{% static 'js/vaga_detalhe.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Cadastro | ATS{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/cadastro.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <h2>Cadastro</h2>
+    <div class="cadastro-box">
+        <div class="field">
+            <label for="register-tipo">Tipo de usuário</label>
+            <select id="register-tipo">
+                <option value="candidato">Candidato</option>
+                <option value="empresa">Empresa</option>
+            </select>
+        </div>
+        <div id="register-candidato-fields">
+            <div class="field">
+                <label for="register-nome-completo">Nome completo</label>
+                <input id="register-nome-completo" type="text" placeholder="Nome completo">
+            </div>
+            <div class="field">
+                <label for="register-data-nascimento">Data de nascimento</label>
+                <input id="register-data-nascimento" type="date">
+            </div>
+        </div>
+        <div id="register-empresa-fields" class="hidden">
+            <div class="field">
+                <label for="register-nome-empresa">Nome da empresa</label>
+                <input id="register-nome-empresa" type="text" placeholder="Nome da empresa">
+            </div>
+            <div class="field">
+                <label for="register-cnpj">CNPJ</label>
+                <input id="register-cnpj" type="text" placeholder="Somente números">
+            </div>
+        </div>
+        <div class="field">
+            <label for="register-email">E-mail</label>
+            <input id="register-email" type="email" placeholder="novo@dominio.com">
+        </div>
+        <div class="field">
+            <label for="register-password">Senha</label>
+            <input id="register-password" type="password" placeholder="mínimo 8 caracteres">
+        </div>
+        <div class="cadastro-actions">
+            <button class="btn" id="btn-register" type="button">Cadastrar</button>
+            <a class="btn btn-secondary" href="{% url 'ui-portal' %}">Voltar para login</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_js %}
+<script type="module" src="{% static 'js/cadastro.js' %}"></script>
+{% endblock %}

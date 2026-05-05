@@ -1,0 +1,14 @@
+<header class="header">
+    <a class="brand-link" href="{% url 'ui-home' %}">ATS Portal</a>
+    <div class="right">
+        <nav class="main-nav">
+            <a id="nav-link-portal" class="btn btn-secondary nav-btn" href="{% url 'ui-portal' %}">Portal</a>
+            <a id="nav-link-empresa" class="btn btn-secondary nav-btn hidden" href="{% url 'ui-empresa' %}">Minhas vagas</a>
+            <a id="nav-link-perfil" class="btn btn-secondary nav-btn hidden" href="{% url 'ui-perfil' %}">Perfil</a>
+            <a id="nav-link-relatorios" class="btn btn-secondary nav-btn hidden" href="{% url 'ui-relatorios' %}">Relatórios</a>
+        </nav>
+        <span id="session-status">Não autenticado</span>
+        <a class="btn btn-secondary" href="/api/docs/" target="_blank" rel="noopener noreferrer">Swagger</a>
+        <button class="btn btn-secondary hidden" id="btn-logout" type="button">Sair</button>
+    </div>
+</header>

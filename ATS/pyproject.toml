@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "api.settings"
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+
+[tool.taskipy.tasks]
+test = "pytest -q"
+test_verbose = "pytest -vv"
+migrate = "python manage.py migrate"
+makemigrations = "python manage.py makemigrations"
+run = "python manage.py runserver"

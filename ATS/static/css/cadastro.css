@@ -1,0 +1,11 @@
+.cadastro-box {
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+.cadastro-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}

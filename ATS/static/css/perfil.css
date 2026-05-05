@@ -1,0 +1,12 @@
+.perfil-grid {
+    align-items: start;
+}
+
+.perfil-grid.single-column {
+    grid-template-columns: 1fr;
+}
+
+.muted-label {
+    font-size: 13px;
+    color: var(--muted);
+}

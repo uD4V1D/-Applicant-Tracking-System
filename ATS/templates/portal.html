@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Portal de vagas | ATS{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/portal.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="auth-screen" class="panel">
+    <h2>Entrar</h2>
+    <div class="auth-box">
+        <h3>Login</h3>
+        <div class="field">
+            <label for="login-email">E-mail</label>
+            <input id="login-email" type="email" placeholder="email@dominio.com">
+        </div>
+        <div class="field">
+            <label for="login-password">Senha</label>
+            <input id="login-password" type="password" placeholder="******">
+        </div>
+        <div class="auth-actions">
+            <button class="btn" id="btn-login" type="button">Entrar</button>
+            <a class="btn btn-secondary" href="{% url 'ui-cadastro' %}">Cadastrar</a>
+        </div>
+    </div>
+</section>
+
+<section id="portal-screen" class="panel hidden">
+    <h2>Portal de Vagas</h2>
+    <div class="inline">
+        <input id="search-keyword" type="text" placeholder="Buscar por palavra-chave">
+        <button class="btn btn-secondary" id="btn-search-vagas" type="button">Buscar</button>
+    </div>
+    <div class="list" id="vagas-list"></div>
+</section>
+{% endblock %}
+
+{% block page_js %}
+<script type="module" src="{% static 'js/portal.js' %}"></script>
+{% endblock %}

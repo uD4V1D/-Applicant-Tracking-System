@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gestão de vaga | ATS{% endblock %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/gestao_vaga.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="panel">
+    <h2>Gestão da vaga</h2>
+    <div class="actions top-actions">
+        <a class="btn btn-secondary" href="{% url 'ui-empresa' %}">Voltar para minhas vagas</a>
+    </div>
+    <div class="empresa-detail-grid">
+        <div class="card">
+            <h4 id="empresa-vaga-menu-titulo">Menu da vaga</h4>
+            <div class="field">
+                <label for="empresa-opened-requisitos">Descrição/Requisitos</label>
+                <textarea id="empresa-opened-requisitos"></textarea>
+            </div>
+            <div class="field">
+                <label for="empresa-opened-status">Status</label>
+                <select id="empresa-opened-status">
+                    <option value="aberta">Aberta</option>
+                    <option value="encerrada">Encerrada</option>
+                    <option value="preenchida">Preenchida</option>
+                </select>
+            </div>
+            <div class="gestao-vaga-actions">
+                <div class="gestao-vaga-actions-top">
+                    <button class="btn" id="btn-empresa-editar-vaga" type="button">Editar</button>
+                    <button class="btn btn-danger" id="btn-empresa-deletar-vaga" type="button">Deletar vaga</button>
+                </div>
+                <button class="btn btn-success gestao-vaga-save" id="btn-empresa-salvar-edicao" type="button">Salvar alterações</button>
+            </div>
+        </div>
+        <div>
+            <h4>Candidaturas</h4>
+            <div class="list" id="empresa-candidaturas-list"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block page_js %}
+<script type="module" src="{% static 'js/gestao_vaga.js' %}"></script>
+{% endblock %}

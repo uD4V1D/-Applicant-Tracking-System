@@ -1,0 +1,32 @@
+.report-actions {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.report-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.report-card {
+    border: 1px solid var(--line);
+    background: #fff;
+    padding: 10px;
+    min-height: 320px;
+}
+
+.report-card h4 {
+    margin-bottom: 8px;
+}
+
+.report-card canvas {
+    width: 100% !important;
+    height: 260px !important;
+}
+
+@media (max-width: 960px) {
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+}
